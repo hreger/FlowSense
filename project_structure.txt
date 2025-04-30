@@ -1,0 +1,23 @@
+FlowSense/
+├── sensor/
+│   ├── config/
+│   │   └── sensor_config.yaml
+│   ├── modules/
+│   │   ├── flow_meter.py
+│   │   ├── rainfall_gauge.py
+│   │   └── soil_moisture.py
+│   └── main.py
+├── cloud/
+│   ├── aws_iot/
+│   │   └── iot_core_handler.py
+│   └── data_storage/
+│       └── data_manager.py
+├── api/
+│   ├── routes/
+│   │   └── basic_endpoints.py
+│   └── app.py
+├── dashboard/
+│   ├── templates/
+│   │   └── basic_dashboard.html
+│   └── main.py
+└── requirements.txt

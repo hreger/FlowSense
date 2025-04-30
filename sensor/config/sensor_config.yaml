@@ -1,0 +1,17 @@
+sensors:
+  flow_meter:
+    type: "digital"
+    pin: 18
+    sampling_rate: 1000  # ms
+    calibration_factor: 7.5
+
+  rainfall_gauge:
+    type: "digital"
+    pin: 23
+    bucket_size: 0.2  # mm per tip
+    debounce_time: 300  # ms
+
+  soil_moisture:
+    type: "analog"
+    adc_channel: 0
+    reading_interval: 3600  # seconds

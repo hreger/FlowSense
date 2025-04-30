@@ -1,0 +1,20 @@
+# Sensor Requirements
+RPi.GPIO==0.7.1
+adafruit-circuitpython-ads1x15==2.2.12
+
+# Cloud & Data
+boto3==1.26.137
+awsiotsdk==1.11.3
+
+# Backend
+fastapi==0.95.2
+uvicorn==0.22.0
+
+# Visualization
+streamlit==1.22.0
+plotly==5.14.1
+grafana-api==1.0.3
+
+# Basic Data Processing
+numpy==1.24.3
+pandas==2.0.1
