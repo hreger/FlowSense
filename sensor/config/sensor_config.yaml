@@ -1,17 +1,31 @@
+# Sensor Network Configuration
+sensor_network:
+  location: "Godavari Basin"
+  sampling_interval: 900  # 15 minutes in seconds
+  
 sensors:
   flow_meter:
     type: "digital"
     pin: 18
     sampling_rate: 1000  # ms
     calibration_factor: 7.5
+    validation:
+      min_flow: 0
+      max_flow: 5000
 
   rainfall_gauge:
     type: "digital"
     pin: 23
     bucket_size: 0.2  # mm per tip
     debounce_time: 300  # ms
+    validation:
+      min_rainfall: 0
+      max_rainfall: 500
 
   soil_moisture:
     type: "analog"
     adc_channel: 0
     reading_interval: 3600  # seconds
+    validation:
+      min_moisture: 0
+      max_moisture: 100

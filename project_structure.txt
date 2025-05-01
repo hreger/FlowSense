@@ -29,6 +29,20 @@ FlowSense/
 │   │   ├── rainfall_gauge.py
 │   │   └── soil_moisture.py
 │   └── main.py
+├── api/
+│   ├── app.py
+│   └── routes/
+│       └── sensor_routes.py
+├── models/
+│   ├── cnn_lstm.py
+│   └── data_processor.py
+├── dashboard/
+│   ├── main.py
+│   └── components/
+│       └── sensor_display.py
+└── utils/
+    ├── data_validation.py
+    └── alert_system.py
 ├── cloud/
 │   ├── aws_iot/
 │   │   └── iot_core_handler.py
