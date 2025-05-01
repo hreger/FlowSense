@@ -21,7 +21,7 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "",
+            "axisLabel": "Flow Rate (m³/s)",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -45,8 +45,21 @@
               "mode": "none"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "line"
             }
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 100
+              }
+            ]
           }
         }
       },
@@ -58,7 +71,7 @@
       },
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": ["mean", "max", "min"],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
@@ -78,32 +91,104 @@
           "group": [],
           "metricColumn": "sensor_id",
           "rawQuery": true,
-          "rawSql": "SELECT\n  time AS \"time\",\n  value,\n  sensor_id\nFROM sensor_data\nWHERE\n  $__timeFilter(time)\nORDER BY 1,2",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "sensor_data",
-          "timeColumn": "time",
-          "timeColumnType": "timestamp",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            }
-          ]
+          "rawSql": "SELECT\n  time AS \"time\",\n  value,\n  sensor_id\nFROM sensor_data\nWHERE\n  sensor_type = 'flow_meter' AND\n  $__timeFilter(time)\nORDER BY 1,2",
+          "refId": "A"
         }
       ],
-      "title": "Sensor Measurements",
-      "type": "timeseries"
+      "title": "Flow Meter Measurements",
+      "type": "timeseries",
+      "description": "Real-time flow rate measurements from flow meter sensors"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "timescaledb"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "Rainfall (mm)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 20,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 50
+              }
+            ]
+          }
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "options": {
+        "legend": {
+          "calcs": ["mean", "max", "min"],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "timescaledb"
+          },
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "sensor_id",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  time AS \"time\",\n  value,\n  sensor_id\nFROM sensor_data\nWHERE\n  sensor_type = 'rainfall_gauge' AND\n  $__timeFilter(time)\nORDER BY 1,2",
+          "refId": "A"
+        }
+      ],
+      "title": "Rainfall Measurements",
+      "type": "timeseries",
+      "description": "Real-time rainfall measurements from rainfall gauge sensors"
     }
   ],
   "refresh": "5s",
