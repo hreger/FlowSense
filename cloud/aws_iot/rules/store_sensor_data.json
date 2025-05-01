@@ -1,0 +1,10 @@
+{
+    "sql": "SELECT * FROM 'sensors/data'",
+    "actions": [
+        {
+            "lambda": {
+                "functionArn": "arn:aws:lambda:REGION:ACCOUNT_ID:function:store-sensor-data"
+            }
+        }
+    ]
+}

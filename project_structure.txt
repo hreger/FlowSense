@@ -1,4 +1,26 @@
 FlowSense/
+├── src/
+│   ├── sensors/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   └── collectors/
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── lstm/
+│   │   └── cnn/
+│   ├── preprocessing/
+│   │   ├── __init__.py
+│   │   └── data_cleaner.py
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── endpoints/
+│   └── utils/
+├── tests/
+├── data/
+│   ├── raw/
+│   └── processed/
+├── notebooks/
+└── config/
 ├── sensor/
 │   ├── config/
 │   │   └── sensor_config.yaml
