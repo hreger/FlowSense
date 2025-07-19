@@ -38,9 +38,9 @@ Our mission is to detect naturally split-off tributaries and **repurpose untappe
 ## 🛠️ Tech Stack
 
 | Category        | Tools & Frameworks                                                                 |
-|----------------|--------------------------------------------------------------------------------------|
+|---------------- |------------------------------------------------------------------------------------|
 | Sensors         | Raspberry Pi, Flow Meters, Rainfall Gauges, Soil Moisture Probes                   |
-| Cloud & Data    | AWS IoT Core, Google Earth Engine, India WRIS, NASA, MODIS, IMD                     |
+| Cloud & Data    | AWS IoT Core, Google Earth Engine, India WRIS, NASA, MODIS, IMD                    |
 | AI/ML           | TensorFlow, PyTorch, LSTM, CNN, XGBoost, Keras                                     |
 | Hydrology       | SWAT+, ArcGIS, QGIS, Soil & Sedimentation Models                                   |
 | Backend/API     | Flask, FastAPI, AWS API Gateway                                                    |
@@ -139,6 +139,19 @@ python app.py
 - 🛰️ A model for global river delta monitoring
 
 ---
+
+## 🧭 Screenshots
+<img width="822" height="552" alt="image" src="https://github.com/user-attachments/assets/e0bdba2a-519b-431f-adbf-744a6a3e1629" />
+<img width="755" height="542" alt="image" src="https://github.com/user-attachments/assets/b86903a5-d40c-442e-825f-21d7cabb56d6" />
+<img width="831" height="562" alt="image" src="https://github.com/user-attachments/assets/afdfb448-d9aa-4a68-9acb-77ec906fcba7" />
+
+
+## Our LSTM Model Performance
+
+<img width="1400" height="700" alt="image" src="https://github.com/user-attachments/assets/ca09db2e-0fe9-421d-a295-1a47659888dc" />
+<img width="1400" height="700" alt="image" src="https://github.com/user-attachments/assets/5e1228eb-3853-4224-bf6d-a57838448368" />
+<img width="1400" height="700" alt="image" src="https://github.com/user-attachments/assets/90ad1671-610b-45f2-bfe5-bf09b60b7bbe" />
+
 
 ## 📢 Contributing
 
